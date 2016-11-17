@@ -1,0 +1,7 @@
+<RCC>
+  <qresource prefix="SnakeOnQT">
+    <file>Resources/open.png</file>
+    <file>Resources/pause.png</file>
+    <file>Resources/play.png</file>
+  </qresource>
+</RCC>
