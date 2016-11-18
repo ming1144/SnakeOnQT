@@ -34,10 +34,7 @@ void SnakeOnQT::on_actionOpenFile_triggered()
 	QImage Qimage(dst.GetBits(), dst.GetWidth(), dst.GetHeight(), QImage::Format_RGB888);
 	origin = Qimage.rgbSwapped().mirrored();
 	QPixmap map = QPixmap::fromImage(origin);
-	QGraphicsScene* scene = new QGraphicsScene();
-	QGraphicsPixmapItem* item = new QGraphicsPixmapItem(map);
-	scene->addItem(item);
-	ui.Image->setScene(scene);
+	ui.Image->setPixmap(map);
 }
 
 void SnakeOnQT::appOpen()

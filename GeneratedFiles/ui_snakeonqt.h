@@ -13,9 +13,9 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
-#include <QtWidgets/QGraphicsView>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QStatusBar>
@@ -32,7 +32,7 @@ public:
     QAction *actionClearSnake;
     QWidget *centralWidget;
     QGridLayout *gridLayout;
-    QGraphicsView *Image;
+    QLabel *Image;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -63,7 +63,7 @@ public:
         gridLayout->setSpacing(6);
         gridLayout->setContentsMargins(11, 11, 11, 11);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
-        Image = new QGraphicsView(centralWidget);
+        Image = new QLabel(centralWidget);
         Image->setObjectName(QStringLiteral("Image"));
 
         gridLayout->addWidget(Image, 0, 0, 1, 1);
@@ -95,6 +95,7 @@ public:
         actionOpenFile->setText(QApplication::translate("SnakeOnQTClass", "OpenFile", 0));
         actionDoSnake->setText(QApplication::translate("SnakeOnQTClass", "DoSnake", 0));
         actionClearSnake->setText(QApplication::translate("SnakeOnQTClass", "ClearSnake", 0));
+        Image->setText(QString());
     } // retranslateUi
 
 };

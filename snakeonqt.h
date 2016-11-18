@@ -11,7 +11,6 @@
 class SnakeOnQT : public QMainWindow 
 {
 	Q_OBJECT
-
 public:
 	SnakeOnQT(QWidget *parent = 0);
 	~SnakeOnQT();
