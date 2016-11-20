@@ -5,6 +5,7 @@
 #include <vector>
 #include ".\CxImage\ximage.h"
 #include "snakeList.h"
+
 using namespace std;
 
 /////////////////////////////AUTOADAPT_MAXLEN AUTOADAPT_MINLEN  case by case

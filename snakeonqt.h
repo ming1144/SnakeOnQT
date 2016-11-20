@@ -4,9 +4,11 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QtWidgets>
 #include <QFiledialog>
+#include <QDebug>
 #include <atlstr.h>
 #include "CxImage\ximage.h"
 #include "ui_snakeonqt.h"
+#include "snakeList.h"
 
 class SnakeOnQT : public QMainWindow 
 {
@@ -24,6 +26,7 @@ public slots:
 private:
 	Ui::SnakeOnQTClass ui;
 	QString filename;
+	CxImage image;
 	QImage origin;
 };
 
