@@ -53,6 +53,15 @@
     <ClCompile Include="snakeList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="myqlabel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_myqlabel.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_myqlabel.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="snakeonqt.h">
@@ -63,6 +72,9 @@
     </CustomBuild>
     <CustomBuild Include="snakeonqt.qrc">
       <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="myqlabel.h">
+      <Filter>Header Files</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>

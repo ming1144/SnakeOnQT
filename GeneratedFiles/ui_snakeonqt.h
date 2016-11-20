@@ -15,12 +15,12 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHeaderView>
-#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
+#include "myqlabel.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -32,7 +32,7 @@ public:
     QAction *actionClearSnake;
     QWidget *centralWidget;
     QGridLayout *gridLayout;
-    QLabel *Image;
+    myQLabel *Image;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -63,7 +63,7 @@ public:
         gridLayout->setSpacing(6);
         gridLayout->setContentsMargins(11, 11, 11, 11);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
-        Image = new QLabel(centralWidget);
+        Image = new myQLabel(centralWidget);
         Image->setObjectName(QStringLiteral("Image"));
 
         gridLayout->addWidget(Image, 0, 0, 1, 1);
@@ -71,7 +71,7 @@ public:
         SnakeOnQTClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(SnakeOnQTClass);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 486, 21));
+        menuBar->setGeometry(QRect(0, 0, 486, 22));
         SnakeOnQTClass->setMenuBar(menuBar);
         mainToolBar = new QToolBar(SnakeOnQTClass);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));

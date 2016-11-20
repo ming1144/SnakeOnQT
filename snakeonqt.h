@@ -22,6 +22,7 @@ public slots:
 	void on_actionOpenFile_triggered();
 	void on_actionDoSnake_triggered();
 	void on_actionClearSnake_triggered();
+	void qLabelClicked(int,int);
 
 private:
 	Ui::SnakeOnQTClass ui;

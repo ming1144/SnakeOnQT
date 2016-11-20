@@ -16,7 +16,7 @@
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">
-     <widget class="QLabel" name="Image">
+     <widget class="myQLabel" name="Image">
       <property name="text">
        <string/>
       </property>
@@ -30,7 +30,7 @@
      <x>0</x>
      <y>0</y>
      <width>486</width>
-     <height>21</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>
@@ -75,6 +75,13 @@
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>myQLabel</class>
+   <extends>QLabel</extends>
+   <header>myqlabel.h</header>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="snakeonqt.qrc"/>
  </resources>
