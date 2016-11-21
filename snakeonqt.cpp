@@ -4,6 +4,7 @@ SnakeOnQT::SnakeOnQT(QWidget *parent)
 	: QMainWindow(parent)
 {
 	ui.setupUi(this);
+	connect(ui.Image, SIGNAL(clicked(const QPoint &)), this, SLOT(on_label_clicked(const QPoint &)));
 }
 
 SnakeOnQT::~SnakeOnQT()
@@ -51,6 +52,13 @@ void SnakeOnQT::on_actionClearSnake_triggered()
 
 }
 
+void SnakeOnQT::on_label_clicked(const QPoint &p)
+{
+	QRgb color = qRgb(255, 0, 0);
+	pointList.push_back(p);
+	origin.setPixel(p, color);
+	ui.Image->setPixmap(QPixmap::fromImage(origin));
+}
 
 
 

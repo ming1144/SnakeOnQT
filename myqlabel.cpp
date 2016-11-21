@@ -13,7 +13,6 @@ myQLabel::~myQLabel()
 
 void myQLabel::mousePressEvent(QMouseEvent *ev)
 {
-	this->x = ev->x();
-	this->y = ev->y();
-	
+	//QLabel::mousePressEvent(ev);
+	emit clicked(ev->pos());
 }

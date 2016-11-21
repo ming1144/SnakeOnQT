@@ -1,7 +1,9 @@
 #ifndef MYQLABEL_H
 #define MYQLABEL_H
 
+#include <iostream>
 #include <QLabel>
+#include <QDebug>
 #include <QMouseEvent>
 
 class myQLabel : public QLabel
@@ -11,10 +13,10 @@ class myQLabel : public QLabel
 public:
 	myQLabel(QWidget *parent);
 	~myQLabel();
-public slots:
-	void mousePressEvent(QMouseEvent *ev);
+protected:
+	void mousePressEvent(QMouseEvent *ev) Q_DECL_OVERRIDE;
 signals:
-	void mouse_Pressed();
+	void clicked(const QPoint &p);
 
 private:
 	int x, y;

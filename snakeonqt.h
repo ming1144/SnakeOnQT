@@ -1,6 +1,7 @@
 #ifndef SNAKEONQT_H
 #define SNAKEONQT_H
 
+#include <vector>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QtWidgets>
 #include <QFiledialog>
@@ -22,13 +23,13 @@ public slots:
 	void on_actionOpenFile_triggered();
 	void on_actionDoSnake_triggered();
 	void on_actionClearSnake_triggered();
-	void qLabelClicked(int,int);
-
+	void on_label_clicked(const QPoint &p);
 private:
 	Ui::SnakeOnQTClass ui;
 	QString filename;
 	CxImage image;
 	QImage origin;
+	vector<QPoint> pointList;
 };
 
 #endif // SNAKEONQT_H
