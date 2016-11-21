@@ -29,7 +29,10 @@ private:
 	QString filename;
 	CxImage image;
 	QImage origin;
-	vector<QPoint> pointList;
+	QPixmap map;
+	vector<POINT> pointList;
+	Snake snake;
+
 };
 
 #endif // SNAKEONQT_H

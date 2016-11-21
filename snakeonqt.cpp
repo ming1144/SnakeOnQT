@@ -33,7 +33,7 @@ void SnakeOnQT::on_actionOpenFile_triggered()
 
 	QImage Qimage(dst.GetBits(), dst.GetWidth(), dst.GetHeight(), QImage::Format_RGB888);
 	origin = Qimage.rgbSwapped().mirrored();
-	QPixmap map = QPixmap::fromImage(origin);
+	map = QPixmap::fromImage(origin);
 	ui.Image->setPixmap(map);
 }
 
@@ -44,20 +44,48 @@ void SnakeOnQT::appOpen()
 
 void SnakeOnQT::on_actionDoSnake_triggered()
 {
-
+	snake.Initialization(&image);
+	snake.loop(pointList);
+	map = QPixmap::fromImage(origin);
+	QPainter paint(&map);
+	paint.setPen(*new QColor(255, 0, 0));
+	QPoint temp1, temp2;
+	for (int i = 1; i < pointList.size(); i++)
+	{
+		temp1 = QPoint(pointList[i - 1].x, pointList[i - 1].y);
+		temp2 = QPoint(pointList[i    ].x, pointList[i    ].y);
+		paint.drawLine(QLine(temp1, temp2));
+	}
+	ui.Image->setPixmap(map);
 }
 
 void SnakeOnQT::on_actionClearSnake_triggered()
 {
-
+	pointList.clear();
+	map = QPixmap::fromImage(origin);
+	ui.Image->setPixmap(map);
 }
 
 void SnakeOnQT::on_label_clicked(const QPoint &p)
 {
-	QRgb color = qRgb(255, 0, 0);
-	pointList.push_back(p);
-	origin.setPixel(p, color);
-	ui.Image->setPixmap(QPixmap::fromImage(origin));
+	QPainter paint(&map);
+	paint.setPen(*new QColor(255, 0, 0));
+	if (pointList.empty() )
+	{
+		paint.drawPoint(p);
+	}
+	else
+	{
+		int tempX = pointList[pointList.size() - 1].x;
+		int tempY = pointList[pointList.size() - 1].y;
+		QPoint temp(tempX, tempY);
+		paint.drawLine(QLine(temp,p));
+	}
+	POINT temp;
+	temp.x = p.x();
+	temp.y = p.y();
+	pointList.push_back(temp);
+	ui.Image->setPixmap(map);
 }
 
 

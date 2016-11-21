@@ -47,9 +47,6 @@ Snake::~Snake()
 			delete[] flow[i];
 		delete[] flow;
 	}
-
-	
-
 }
 
 void Snake::loop(vector <POINT> &SnakeList) {
@@ -278,7 +275,6 @@ void Snake::rebuild(int space) {
 	double total = clength[snake.size()];
 	int nmb = (int)(0.5 + total / space);
  
-//	vector<POINT> newsnake;
 	newsnake.clear();
 	for (int i = 0, j = 0; j < nmb; j++)
 	{
